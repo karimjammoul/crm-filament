@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::middleware('signed')
     ->get('invitation/{invitation}/accept', \App\Livewire\AcceptInvitation::class)
     ->name('invitation.accept');
+
+Route::middleware('signed')
+    ->get('quotes/{quote}/pdf', \App\Http\Controllers\QuotePdfController::class)
+    ->name('quotes.pdf');
